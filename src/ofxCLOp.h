@@ -7,7 +7,7 @@ OFX_CL_BEGIN_NAMESPACE
 // Buffer
 
 template <typename T>
-inline void convert(const vector<T> &data, cl::Buffer& buffer, cl_mem_flags flag = CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR)
+inline void convert(const vector<T>& data, cl::Buffer& buffer, cl_mem_flags flag = CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR)
 {
 	cl_int err = CL_SUCCESS;
 	
@@ -71,7 +71,7 @@ inline cl::Event copy(const vector<T>& data, cl::Buffer& buffer, bool block = tr
 
 // Image
 
-inline void convert(const ofPixels &pix, cl::Image2D &image, cl_mem_flags flag = CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR)
+inline void convert(const ofPixels& pix, cl::Image2D& image, cl_mem_flags flag = CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR)
 {
 	cl_int err = CL_SUCCESS;
 	
@@ -110,7 +110,7 @@ inline void convert(const ofPixels &pix, cl::Image2D &image, cl_mem_flags flag =
 	ofxCL::reportError(err);
 }
 
-inline cl::Event copy(const cl::Image2D &image, ofPixels& pix, bool block = true)
+inline cl::Event copy(const cl::Image2D& image, ofPixels& pix, bool block = true)
 {
 	cl_int err = CL_SUCCESS;
 	
@@ -137,7 +137,7 @@ inline cl::Event copy(const cl::Image2D &image, ofPixels& pix, bool block = true
 	return event;
 }
 
-inline cl::Event copy(const ofPixels& pix, cl::Image2D &image, bool block = true)
+inline cl::Event copy(const ofPixels& pix, cl::Image2D& image, bool block = true)
 {
 	cl_int err = CL_SUCCESS;
 	
@@ -166,7 +166,7 @@ inline cl::Event copy(const ofPixels& pix, cl::Image2D &image, bool block = true
 
 // ImageGL
 
-inline void convert(ofTexture &v, cl::ImageGL &image, cl_mem_flags flag = CL_MEM_READ_WRITE)
+inline void convert(ofTexture& v, cl::ImageGL& image, cl_mem_flags flag = CL_MEM_READ_WRITE)
 {
 	cl_int err = CL_SUCCESS;
 	
@@ -196,7 +196,7 @@ inline void convert(ofTexture &v, cl::ImageGL &image, cl_mem_flags flag = CL_MEM
 
 // BufferGL
 
-inline void convert(GLuint bufobj, cl::BufferGL &buffer, cl_mem_flags flag = CL_MEM_READ_WRITE)
+inline void convert(GLuint bufobj, cl::BufferGL& buffer, cl_mem_flags flag = CL_MEM_READ_WRITE)
 {
 	cl_int err = CL_SUCCESS;
 	

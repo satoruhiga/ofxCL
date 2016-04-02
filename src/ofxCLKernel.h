@@ -143,7 +143,7 @@ public:
 			ARG(idx, t15);
 		}
 		
-		cl::CommandQueue &queue = Context::getCurrentContext().queue;
+		cl::CommandQueue& queue = Context::getCurrentContext().queue;
 		
 		cl::Event event;
 		cl_int err = CL_SUCCESS;
@@ -172,8 +172,6 @@ public:
 			cl::Event e;
 			queue.enqueueReleaseGLObjects(&gl_objects, NULL, &e);
 			e.wait();
-			
-			glFinish();
 		}
 		
 		return true;

@@ -23,7 +23,8 @@ bool Program::load(string path)
 		std::vector<cl::Device> devices;
 		devices.push_back(ctx.device);
 		
-		cl_int err = program.build(devices);
+		const char* options = "-cl-fast-relaxed-math -cl-single-precision-constant";
+		cl_int err = program.build(devices, options);
 		
 		if (err == CL_BUILD_PROGRAM_FAILURE)
 		{

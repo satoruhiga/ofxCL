@@ -56,10 +56,10 @@ void Context::setup(int device_id, bool withOpenGL)
 		CGLShareGroupObj kCGLShareGroup = CGLGetShareGroup(kCGLContext);
 		cl_context_properties properties[] = { CL_CONTEXT_PROPERTY_USE_CGL_SHAREGROUP_APPLE, (cl_context_properties)kCGLShareGroup, 0 };
 #else
-		cl_context_properties    properties[] = {
+		cl_context_properties properties[] = {
 			CL_GL_CONTEXT_KHR, (cl_context_properties)wglGetCurrentContext(),
 			CL_WGL_HDC_KHR, (cl_context_properties)wglGetCurrentDC(),
-			CL_CONTEXT_PLATFORM, (cl_context_properties)clPlatform,
+			CL_CONTEXT_PLATFORM, (cl_context_properties)(platforms[0])(),
 			0};
 #endif
 		
